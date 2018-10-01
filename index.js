@@ -201,7 +201,7 @@ client.on('message', message => {
 		.setTitle("JblusHeberg - Partner");
 		.setDescription("<>---------------<>");
 		.addField("BlueWater :", "");
-		message.reply("JE tes envoyer la list en priver :D");
+		message.reply("Je tes envoyer la list en priver :D");
 		message.author.send({embed: partner_embed});
 	}
 
