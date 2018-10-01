@@ -4,7 +4,7 @@ const client = new Discord.Client()
 
 var prefix = ">>";
 
-client.login("NDkyMDI5MjcyMzY2NjQ1MjQ5.DoQwjw.i100wV-qrRNf6otne93vFwXMKSY");
+client.login(process.env.TOKEN);
 
 client.on("ready", () => {
 	console.log("[JblusCode] You have Enable");
