@@ -184,7 +184,7 @@ client.on('message', message => {
 		setTitle('My Profiles : ${'message.author.username'}')
 		addField('User Id : :id:', msgauthor, true)
 		addField("Create Profiles :", userCreateDate[1] + ' ' + userCreateDate[2] + ' ' + userCreateDate[3])
-		setThumbnail(message.author.avatatURL)
+		.setThumbnail(message.author.avatatURL)
 		message.reply("Toutes tes informations t'on était envoyer en priver")
 		message.author.send({embed: stats_embed});
 		break;
