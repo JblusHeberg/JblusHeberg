@@ -20,28 +20,28 @@ client.on('message', message => {
 	if (message.content === prefix + "cmd") {
 		var help_embed = new Discord.RichEmbed()
 		.setColor("#262626");
-		.setTitle("JblusHeberg - Commands");
-		.setDescription("<>---------------<>");
-		.addField(">>cmd", "View commands bot");
-		.addField(">>website", "View website");
-		.addField(">>stats", "View stats players");
-		.addField(">>infos", "View infos on Discord and website");
-		.addField(">>modo", "View moderator commands");
-		.setFooter("---> use >>cmd 2");
+		setTitle("JblusHeberg - Commands");
+		setDescription("<>---------------<>");
+		addField(">>cmd", "View commands bot");
+		addField(">>website", "View website");
+		addField(">>stats", "View stats players");
+		addField(">>infos", "View infos on Discord and website");
+		addField(">>modo", "View moderator commands");
+		setFooter("---> use >>cmd 2");
 		message.channel.sendMessage(help_embed);
 		console.log("Le premier menu d'aider a était activer");
 	}
 	if (message.content === prefix + "cmd 2") {
 		var help2_embed = new Discord.RichEmbed()
 		.setColor("#262626");
-		.setTitle("JblusHeberg - Commands");
-		.setDescription("<>---------------<>");
-		.addField(">>rules", "Voir les régle du serveur");
-		.addField(">>partner", "Voir nos partenaire");
-		.addField("", "");
-		.addField("", "");
-		.addField("", "");
-		.setFooter("---> use >>cmd 2");
+		setTitle("JblusHeberg - Commands");
+		setDescription("<>---------------<>");
+		addField(">>rules", "Voir les régle du serveur");
+		addField(">>partner", "Voir nos partenaire");
+		addField("", "");
+		addField("", "");
+		addField("", "");
+		setFooter("---> use >>cmd 2");
 		message.channel.sendMessage(help2_embed);
 		console.log("Le second menu d'aider a était activer");
 	}
@@ -49,14 +49,14 @@ client.on('message', message => {
 	if (message.content === prefix + "rules") {
 		var rules_embed = new Discord.RichEmbed()
 		.setColor("#262626");
-		.setTitle("JblusHeberg - RulesCommands");
-		.setDescription("<>---------------<>");
-		.addField("-Ne pas insulter");
-		.addField("-Ne pas menace (DDOS, RAT, ...");
-		.addField("-Ne pas spam message dans les channels");
-		.addField("-Ne pas diffuser des image pornographique ou autre dans nos salons");
-		.addField("-Ne pas diffuser des sons pornographique ou autre dans nos salons vocaux");
-		.setDescription("Toute régle non respecter seront sanctionner");
+		setTitle("JblusHeberg - RulesCommands");
+		setDescription("<>---------------<>");
+		addField("-Ne pas insulter");
+		addField("-Ne pas menace (DDOS, RAT, ...");
+		addField("-Ne pas spam message dans les channels");
+		addField("-Ne pas diffuser des image pornographique ou autre dans nos salons");
+		addField("-Ne pas diffuser des sons pornographique ou autre dans nos salons vocaux");
+		setDescription("Toute régle non respecter seront sanctionner");
 		message.channel.sendMessage(rules_embed);
 		console.log("L'onglet des régle vient d'être ouvert par un joueurs du serveur discord");
 	}
@@ -65,14 +65,14 @@ client.on('message', message => {
 		var modo_embed = new Discord.RichEmbed()
 		if (message.guild.member(message.author).hasPermision("BAN_MEMBERS")) return message.channel.send("Tu ne peut pas utiliser cette commands !");
 		.setColor("#262626");
-		.setTitle("JblusHeberg - ModeratorCommands");
-		.setDescription("<>---------------<>");
-		.addField(">>ban");
-		.addField(">>kick");
-		.addField(">>mute");
-		.addField(">>clear");
-		.addField(">>warn");
-		.addField(">>unmute");
+		setTitle("JblusHeberg - ModeratorCommands");
+		setDescription("<>---------------<>");
+		addField(">>ban");
+		addField(">>kick");
+		addField(">>mute");
+		addField(">>clear");
+		addField(">>warn");
+		addField(">>unmute");
 		message.channel.sendMessage(modo_embed);
 		console.log("L'onglet Moderator a était ouvert !!");
 	}
@@ -80,9 +80,9 @@ client.on('message', message => {
 	if (message.content === prefix + "website") {
 		var web_embed = new Discord.RichEmbed()
 		.setColor("#262626");
-		.setTitle("JblusHeberg - Website");
-		.setDescription("<>---------------<>");
-		.addField("www.jblusheberg.com", "comming soon");
+		setTitle("JblusHeberg - Website");
+		setDescription("<>---------------<>");
+		addField("www.jblusheberg.com", "comming soon");
 		message.channel.sendMessage(web_embed);
 		console.log("Une personne vient de demmander un accès au site")
 	}
@@ -90,11 +90,11 @@ client.on('message', message => {
 	if (message.content === prefix + "infos") {
 		var info_embed = Discord.RichEmbed();
 		.setColor("#262626");
-		.setTitle("JblusHeberg - Infos");
-		.addField(" :robot: Nom :", `${client.user.tag}`, true);
-		.addField("Description :", `#${client.user.discriminator}`);
-		.addField("ID :id: ", `${client.user.id}`);
-		.addField("Member Server", message.guild.member.size);
+		setTitle("JblusHeberg - Infos");
+		addField(" :robot: Nom :", `${client.user.tag}`, true);
+		addField("Description :", `#${client.user.discriminator}`);
+		addField("ID :id: ", `${client.user.id}`);
+		addField("Member Server", message.guild.member.size);
 		message.channel.sendMessage(info_embed);
 		console.log("Un utilisateur a voulus voir les informations sur notre serveur");
  	}
@@ -181,10 +181,10 @@ client.on('message', message => {
 
 		var stats_embed = new Discord.RichEmbed();
 		.setColor("#262626")
-		.setTitle('My Profiles : ${'message.author.username'}')
-		.addField('User Id : :id:', msgauthor, true)
-		.addField("Create Profiles :", userCreateDate[1] + ' ' + userCreateDate[2] + ' ' + userCreateDate[3])
-		.setThumbnail(message.author.avatatURL)
+		setTitle('My Profiles : ${'message.author.username'}')
+		addField('User Id : :id:', msgauthor, true)
+		addField("Create Profiles :", userCreateDate[1] + ' ' + userCreateDate[2] + ' ' + userCreateDate[3])
+		setThumbnail(message.author.avatatURL)
 		message.reply("Toutes tes informations t'on était envoyer en priver")
 		message.author.send({embed: stats_embed});
 		break;
@@ -198,9 +198,9 @@ client.on('message', message => {
 
 		var partner_embed = new Discord.RichEmbed();
 		.setColor("#262626");
-		.setTitle("JblusHeberg - Partner");
-		.setDescription("<>---------------<>");
-		.addField("BlueWater :", "");
+		setTitle("JblusHeberg - Partner");
+		setDescription("<>---------------<>");
+		addField("BlueWater :", "");
 		message.reply("Je tes envoyer la list en priver :D");
 		message.author.send({embed: partner_embed});
 	}
